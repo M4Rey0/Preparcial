@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "title": "Internationalization preparcial",
+    "description": "Simple internationalization example with the Next.js App Router"
+  },
+  "header": {
+    "brand": "I18N Application",
+    "home": "Home",
+    "languageSelector": "Select language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "home": {
+    "eyebrow": "Preparcial",
+    "title": "Internationalization with Next.js",
+    "description": "This application detects the language, loads a dictionary, and remembers the user's preference.",
+    "currentLanguageLabel": "Current language",
+    "currentLanguageValue": "English",
+    "featuresTitle": "Implemented features",
+    "features": [
+      {
+        "title": "Language routes",
+        "description": "Pages are available under /es and /en."
+      },
+      {
+        "title": "JSON dictionaries",
+        "description": "Texts are loaded asynchronously on the server."
+      },
+      {
+        "title": "Persistent preference",
+        "description": "The selected language is stored in a browser cookie."
+      }
+    ]
+  },
+  "footer": {
+    "rights": "© 2026. All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The requested route or language does not exist.",
+    "backHome": "Back to home"
+  }
+}
