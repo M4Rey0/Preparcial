@@ -8,32 +8,12 @@ import { locales } from "@/i18n/config";
 import { getDictionary, hasLocale } from "./dictionaries";
 
 interface LocaleParams {
-  params: Promise<{ lang: string }>;
-}
-
-interface LangLayoutProps extends LocaleParams {
   children: ReactNode;
+  params: Promise<{ lang: string }>;
 }
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
-}
-
-export async function generateMetadata({
-  params,
-}: LocaleParams): Promise<Metadata> {
-  const { lang } = await params;
-
-  if (!hasLocale(lang)) {
-    return {};
-  }
-
-  const dictionary = await getDictionary(lang);
-
-  return {
-    title: dictionary.metadata.title,
-    description: dictionary.metadata.description,
-  };
 }
 
 export default async function LangLayout({
@@ -57,7 +37,10 @@ export default async function LangLayout({
           {children}
         </main>
 
-        <Footer rights={dictionary.footer.rights} />
+        <Footer rights={dictionary.footer.rights} 
+        credits={dictionary.footer.credits}
+        />
+        
       </body>
     </html>
   );
